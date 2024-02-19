@@ -1,6 +1,6 @@
 function execute(url, page) {
     if (!page) page = '1';
-    let response = fetch("https://www.po18.tw/tags", {
+    let response = fetch("https://m.uaa.com/novel/tags", {
         method: "GET",
         queries: {
             page : page
@@ -22,7 +22,7 @@ function execute(url, page) {
                 link: e.select(".book_name a").first().attr("href"),
                 cover: img,
                 description: e.select(".book_author").text(),
-                host: "https://www.po18.tw"
+                host: "https://m.uaa.com/novel"
             })
         }
         return Response.success(data, next)

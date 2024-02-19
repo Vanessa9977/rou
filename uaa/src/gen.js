@@ -1,7 +1,7 @@
 function execute(id, page) {
     if (!page) page = '1';
-    var tk001 = fetch('https://www.po18.tw/findbooks/index').html().select('input[name=_po18rf-tk001]').attr('value');
-    let response = fetch("https://www.po18.tw/findbooks/index", {
+    var tk001 = fetch('https://m.uaa.com/novel/findbooks/index').html().select('input[name=_po18rf-tk001]').attr('value');
+    let response = fetch("https://m.uaa.com/novel/findbooks/index", {
         "method": "POST",
         "body": {
             "_po18rf-tk001": tk001,
@@ -30,7 +30,7 @@ function execute(id, page) {
                 link: e.select("a.l_bookname").first().attr("href"),
                 cover: 'https://cdn0.po18.tw/bc/120/766456/O20220324104854.jpg',
                 description: e.select("a.l_author").text(),
-                host: "https://www.po18.tw"
+                host: "https://m.uaa.com/novel"
             })
         }
         return Response.success(data, next)
